@@ -1,0 +1,9 @@
+//get email
+router.post('/getuser/email', async  (req,res) => {                          
+res.send({data : await User.find({email: {$regex: `${req.body.email}`}})})  //search email that has the word specified in postman               
+})
+
+//get name
+router.post('/getuser/name', async  (req,res) => {                          
+  res.send({data : await User.find({name: {$regex: `${req.body.name}`}})})  //search name that has the word specified in postman               
+})
